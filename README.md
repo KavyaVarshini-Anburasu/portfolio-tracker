@@ -192,6 +192,23 @@ The app will be available at **http://localhost:5173**.
 
 ---
 
+## 🗺️ Roadmap
+
+Planned improvements and features:
+
+- [ ] **Live stock prices** — Integrate a market data API (e.g. Alpha Vantage, Yahoo Finance) to auto-update `current_price` on holdings
+- [ ] **Interactive charts** — Visualize portfolio performance over time with line/area charts (e.g. Recharts or Chart.js)
+- [ ] **Password reset** — Email-based password recovery flow with Django's built-in `PasswordResetView`
+- [ ] **Portfolio creation/deletion** — Let users manage portfolios directly from the UI (mutations already straightforward to add)
+- [ ] **Holding management** — Add/remove holdings with ticker autocomplete and validation
+- [ ] **Gain/loss tracking** — Calculate unrealized P&L per holding and across the portfolio
+- [ ] **CSV import/export** — Bulk import transactions from brokerage exports
+- [ ] **Responsive mobile layout** — Optimized views for phones and tablets
+- [ ] **User registration** — Self-service sign-up with email verification
+- [ ] **Deployment config** — Docker Compose setup for one-command production deployment
+
+---
+
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
