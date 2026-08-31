@@ -1,0 +1,356 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --border: #e2e5ea;
+  --text: #1c2024;
+  --text-muted: #6b7280;
+  --accent: #2f6feb;
+  --danger: #c0392b;
+  --buy: #1c7c4a;
+  --buy-bg: #e6f4ec;
+  --sell: #a8410f;
+  --sell-bg: #fdeee5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a;
+    --surface: #1c2024;
+    --border: #2c3238;
+    --text: #e8eaed;
+    --text-muted: #9aa4b2;
+    --accent: #6aa1ff;
+    --danger: #f0796a;
+    --buy: #74d69f;
+    --buy-bg: #17301f;
+    --sell: #f0a97a;
+    --sell-bg: #33220f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+}
+h2 {
+  font-size: 18px;
+  margin: 0;
+}
+h3 {
+  font-size: 14px;
+  margin: 0 0 10px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+button {
+  font: inherit;
+  padding: 7px 14px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.link-button {
+  background: none;
+  color: var(--accent);
+  padding: 2px 4px;
+  border: none;
+}
+.link-button:hover:not(:disabled) {
+  text-decoration: underline;
+}
+.link-button.danger {
+  color: var(--danger);
+}
+
+input,
+select {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 9px;
+  width: 100%;
+}
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.status {
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+.status-error {
+  color: var(--danger);
+}
+
+.form-error {
+  margin: 8px 0 0;
+  color: var(--danger);
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.empty {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+}
+
+/* ---- login ---- */
+
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 340px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+}
+.login-card h1 {
+  text-align: center;
+}
+.login-subtitle {
+  margin: 6px 0 22px;
+  text-align: center;
+  color: var(--text-muted);
+}
+.login-card label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.login-card input {
+  margin-bottom: 16px;
+}
+.login-card button[type='submit'] {
+  width: 100%;
+}
+
+/* ---- dashboard ---- */
+
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.session {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.grand-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.grand-total .amount {
+  font-size: 26px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  color: var(--text-muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+.card-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.card-total {
+  text-align: right;
+}
+.card-total .label {
+  display: block;
+}
+.card-total .amount {
+  font-size: 18px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- tables ---- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 9px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+th {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.strong {
+  font-weight: 650;
+}
+.ticker {
+  font-weight: 650;
+}
+
+.holdings > tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
+.history-row > td {
+  padding: 16px 10px 20px;
+  background: var(--bg);
+}
+.history h3 {
+  margin-bottom: 8px;
+}
+
+.transactions th,
+.transactions td {
+  padding: 7px 8px;
+  font-size: 14px;
+}
+.transactions tr:last-child td {
+  border-bottom: none;
+}
+.transactions .actions {
+  white-space: nowrap;
+}
+.transactions .cell-input {
+  max-width: 90px;
+  text-align: right;
+  padding: 4px 6px;
+}
+.transactions select {
+  width: auto;
+  padding: 4px 6px;
+}
+.transactions .editing {
+  background: var(--surface);
+}
+
+.tag {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.tag-buy {
+  color: var(--buy);
+  background: var(--buy-bg);
+}
+.tag-sell {
+  color: var(--sell);
+  background: var(--sell-bg);
+}
+
+/* ---- add transaction ---- */
+
+.add-transaction {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.add-transaction .fields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+}
+.add-transaction label {
+  flex: 1 1 110px;
+  min-width: 90px;
+}
+.add-transaction label span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
